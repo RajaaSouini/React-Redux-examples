@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
 import './index.css';
-import App from './tp1/App';
+import App from './Tp1WithAmina/app (1)';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { store } from './tp1/store';
+import { createStore } from 'redux';
+import Creducer from './Tp1WithAmina/Creducer';
+const store = createStore(Creducer); 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
