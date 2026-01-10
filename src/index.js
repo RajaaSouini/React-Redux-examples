@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import './index.css';
-import App from './Tp1WithAmina/app (1)';
+import App from './tp2/App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import Creducer from './Tp1WithAmina/Creducer';
+import ClientForm from './tp2/ClientForm';
 const store = createStore(Creducer); 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
