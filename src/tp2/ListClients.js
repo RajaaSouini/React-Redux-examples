@@ -1,34 +1,39 @@
 import React from "react";
-import { useDispatch , useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteClient } from "./actions";
 
 const ClientList = () => {
-    const clients = useSelector((state) =>
-    state.clients);
+    const clients = useSelector((state) => state.clients);
     const dispatch = useDispatch();
-    const handleDelete = (email) =>{
-
-    };
+    
     return (
-        <table border={1}>
+        <table border="1">
             <thead>
                 <tr>
-                    <th>Nom:</th>
-                    <th>Email :</th>
-                    <th>Action :</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                {clients.map((client , index)=>(
+                {clients.map((client, index) => (
                     <tr key={index}>
                         <td>{client.name}</td>
                         <td>{client.email}</td>
                         <td>
-                            <button>Supprimer</button>
+                            <button
+                                onClick={() =>
+                                    dispatch(deleteClient(client.email))
+                                }
+                            >
+                                Supprimer
+                            </button>
                         </td>
                     </tr>
                 ))}
             </tbody>
         </table>
-    )
-}
-export default ClientList ;
+    );
+};
+
+export default ClientList;

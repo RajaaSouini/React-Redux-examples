@@ -5,10 +5,7 @@ import './index.css';
 import App from './tp2/App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import Creducer from './Tp1WithAmina/Creducer';
-import ClientForm from './tp2/ClientForm';
-const store = createStore(Creducer); 
+import store from './tp2/store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
