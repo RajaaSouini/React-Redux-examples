@@ -1,9 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteClient } from "./actions";
+import { selectAllClients } from "./clientSelector";
 
 const ClientList = () => {
-    const clients = useSelector((state) => state.clientState.clients);
+    //const clients = useSelector((state) => state.clientState.clients);
+    const clients = useSelector(selectAllClients); 
     const dispatch = useDispatch();
     const handleDelete = (email)=> {
         dispatch(deleteClient(email));

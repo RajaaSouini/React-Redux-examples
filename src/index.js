@@ -2,10 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import './index.css';
-import App from './tp2/App';
+import App from './EFM/app';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import store from './tp2/store';
+import {configureStore} from '@reduxjs/toolkit' 
+import userReducer from './exemple1toolkit/Users2'
+const store=configureStore({ 
+    reducer:{ users:userReducer}   
+}) 
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>

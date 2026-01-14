@@ -1,32 +1,32 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteClient } from "./actions";
+import {deleteProduit } from "./actions";
 
-const ClientList = () => {
-    const clients = useSelector((state) => state.clientState.clients);
+const ProduitList = () => {
+    const produits = useSelector((state) => state.productState.produits);
     const dispatch = useDispatch();
-    const handleDelete = (email)=> {
-        dispatch(deleteClient(email));
-    }
 
+    const handleDelete = (price)=> {
+        dispatch(deleteProduit(price));
+    }
     return (
         <table border="1">
             <thead>
                 <tr>
                     <th>Nom</th>
-                    <th>Email</th>
+                    <th>Prix</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                {clients.map((client, index) => (
+                {produits.map((produit, index) => (
                     <tr key={index}>
-                        <td>{client.name}</td>
-                        <td>{client.email}</td>
+                        <td>{produit.name}</td>
+                        <td>{produit.price}</td>
                         <td>
                             <button
                                 onClick={() =>
-                                    handleDelete(client.email)
+                                    handleDelete(produit.price)
                                 }
                             >
                                 Supprimer
@@ -39,4 +39,4 @@ const ClientList = () => {
     );
 };
 
-export default ClientList;
+export default ProduitList;

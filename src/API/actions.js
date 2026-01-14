@@ -4,15 +4,17 @@ export const ADD_CLIENT = "ADD_CLIENT";
 export const FILTER_CLIENTS = "FILTER_CLIENTS";
 export const DELETE_CLIENT = "DELETE_CLIENT";
 
-export const ADD_PRODUIT = "ADD_PRODUIT";
-export const DELETE_PRODUIT = "DELETE_PRODUIT";
-
-
+export const SAVE_CLIENTS = "SAVE_CLIENTS";
 
 export const addClient = (client) => ({
     type: ADD_CLIENT,
     payload: client,
 });
+
+export const saveClients = (data) =>({
+    type: SAVE_CLIENTS,
+    payload : data,
+})
 
 export const filterClients = (email) => ({
     type: FILTER_CLIENTS,
@@ -24,12 +26,4 @@ export const deleteClient = (email) => ({
     payload: email,
 });
 
-export const addProduit = (produit) => ({
-    type : ADD_PRODUIT,
-    payload : produit ,
-});
 
-export const deleteProduit = (price) =>({
-    type : DELETE_PRODUIT,
-    payload : price,
-})
