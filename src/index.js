@@ -6,16 +6,17 @@ import App from './EFM/app';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import {configureStore} from '@reduxjs/toolkit' 
-import userReducer from './exemple1toolkit/Users2'
+import itemReducer from './chat1/reducer';
+import ItemList from './chat1/C';
 const store=configureStore({ 
-    reducer:{ users:userReducer}   
+    reducer:{ items:itemReducer}   
 }) 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <App/>
+    <ItemList/>
   </Provider>
 );
 
